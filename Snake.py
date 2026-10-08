@@ -1,4 +1,4 @@
-import pygame
+iimport pygame
 import random
 pygame.init()
 
@@ -137,8 +137,8 @@ class Snake:
         #Deleting last tuple in body
         self.body.pop()
 
-        print("Head:(" + str(head_x) + "," + str(head_y) + ")")
-        print("Body:" + str(self.body))
+        #print("Head:(" + str(head_x) + "," + str(head_y) + ")")
+        #print("Body:" + str(self.body))
 
     def grow(self):
         self.extendBody = True
@@ -148,24 +148,3 @@ class Fruit:
         self.grid_size = grid_size
         self.cell_size = cell_size
         self.x = None
-        self.y = None
-        self.generate()
-
-    def generate(self, snake_body=[]):
-        while True:
-            self.x = random.randrange(0, self.grid_size)
-            self.y = random.randrange(0, self.grid_size)
-            if (self.x, self.y) not in snake_body:
-                break
-
-
-
-
-    def draw(self,screen):
-        fruit_rect = pygame.Rect(self.x * self.cell_size, self.y * self.cell_size, self.cell_size, self.cell_size)
-        pygame.draw.rect(screen, (200,0,0), fruit_rect)
-
-
-
-game = Game()
-game.run()

@@ -110,7 +110,7 @@ class Snake:
         snake_rect = pygame.Rect(head_x * self.cell_size, head_y * self.cell_size, self.cell_size, self.cell_size)
         pygame.draw.rect(screen, (0,200,0), snake_rect)
         for x,y in self.body:
-            print((x,y))
+            #print((x,y))
             body_rect = pygame.Rect(x * self.cell_size, y * self.cell_size, self.cell_size, self.cell_size)
             pygame.draw.rect(screen, (0,200,0), body_rect)
 
@@ -119,7 +119,7 @@ class Snake:
         #Adding current head position to body
         if self.extendBody:
             self.body.append((head_x,head_y))
-            print("Body has been extended")
+            #print("Body has been extended")
         self.extendBody = False
 
         if self.direction == "RIGHT":
